@@ -1,7 +1,20 @@
+header{
+    text-align: center;
+    margin: auto;
+    width: 75%;
+    border: 15px;
+    border-color: blue;
+    border-style: solid;
+    padding: 5%;
+}
+h1 {
+    font-size: 3em;
+    margin-bottom: 5%;
+}
 .questions {
-    display: none;
+    /*display: none;*/
     
 }
 .answers {
-    display: none;
+    /*display: none;*/
 }
