@@ -46,7 +46,7 @@ var possibleQuestions = [
 startButton.addEventListener("click",startQuiz)
 
 function startQuiz() {
-    timerCount = 30;
+    timerCount = 60;
     // Prevents start button from being clicked when round is in progress
     startButton.disabled = true;
     startTimer();
@@ -68,6 +68,7 @@ function checkAnswer(e){
     } 
     else {
         wrongAnswers++;
+        timerCount -=5;
         console.log(wrongAnswers + "wrong")
     }
     //increment question by 1
@@ -88,9 +89,7 @@ function checkAnswer(e){
         document.getElementById("questionText").style.display="none";
         document.getElementById("answers").style.display="none";
         document.getElementById("timer").style.display="none";
-        console.log("string")
-        
-
+        userNameandScore()
     }
     
  }
@@ -128,6 +127,12 @@ function getQuestions(){
 }
 console.log(rightAnswers)
 console.log(wrongAnswers)
+
+function userNameandScore() {
+    var userName=document.createElement("p")
+    userName.innerHTML="Hi"
+    document.body.appendChild(userName)
+}
 //startQuiz();
 
 /*function checkCorrect(){
