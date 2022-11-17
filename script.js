@@ -78,6 +78,18 @@ function checkAnswer(e){
     }
     else {
         clearInterval(timer);
+        var wrongScore=document.createElement("p");
+        wrongScore.innerHTML="You got "+ wrongAnswers+ " questions wrong";
+        document.body.appendChild(wrongScore);
+        var correctScore=document.createElement("p");
+        correctScore.innerHTML="You got "+ rightAnswers+ " questions correct";
+        document.body.appendChild(correctScore);
+        
+        document.getElementById("questionText").style.display="none";
+        document.getElementById("answers").style.display="none";
+        document.getElementById("timer").style.display="none";
+        console.log("string")
+        
 
     }
     
