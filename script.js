@@ -19,28 +19,28 @@ var possibleQuestions = [
         answerOne:"Does this make sense?",
         answerTwo: "two",
         answerThree: "three",
-        correctAnswer:"yep"
+        correct:"yep"
     },
     {
         question:"question 2",
         answerOne:"one",
         answerTwo: "two",
         answerThree: "three",
-        correctAnswer: "yep"
+        correct: "yep"
     },
     {
         question:"question 3",
         answerOne:"one",
         answerTwo: "two",
         answerThree: "three",
-        correctAnswer: "yep"
+        correct: "yep"
     },
     {
         question:"question 4",
         answerOne:"one",
         answerTwo: "two",
         answerThree: "three",
-        correctAnswer: "yep"
+        correct: "yep"
     }
 ]
 startButton.addEventListener("click",startQuiz)
@@ -61,12 +61,14 @@ function checkAnswer(e){
     userAnswer=e.target.innerText
     console.log(userAnswer)
     //check if answer is correct
-    if (userAnswer === possibleQuestions[questionIndex].correctAnswer) {
+    if (userAnswer === possibleQuestions[questionIndex].correct) {
         rightAnswers++;
+        console.log(rightAnswers + "right");
         
     } 
     else {
         wrongAnswers++;
+        console.log(wrongAnswers + "wrong")
     }
     //increment question by 1
     questionIndex++;
@@ -85,8 +87,8 @@ function checkAnswer(e){
 function startTimer() {
     // Sets timer
     timer = setInterval(function() { //timer has been declared but not set
-      timerCount--; //timerCount was set to 30 in line 28, now is 29 because -1
-      timerElement.textContent = timerCount;
+        timerElement.textContent = timerCount;
+        timerCount--; //timerCount was set to 30 in line 28, now is 29 because -1
       if (timerCount <= 0) {        
           clearInterval(timer);    
       }
@@ -105,11 +107,15 @@ function getQuestions(){
     var answer3=document.createElement("button");
     answer3.addEventListener("click", checkAnswer);
     answer3.textContent=possibleQuestions[questionIndex].answerThree;
+    var correctAnswer=document.createElement("button");
+    correctAnswer.addEventListener("click", checkAnswer);
+    correctAnswer.textContent=possibleQuestions[questionIndex].correct;
     answersElement.innerHTML="";
-    answersElement.append(answer1, answer2, answer3);
+    answersElement.append(answer1, answer2, answer3, correctAnswer);
 
 }
-
+console.log(rightAnswers)
+console.log(wrongAnswers)
 //startQuiz();
 
 /*function checkCorrect(){
