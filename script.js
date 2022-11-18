@@ -86,9 +86,12 @@ function checkAnswer(e){
         correctScore.innerHTML="You got "+ rightAnswers+ " questions correct";
         document.body.appendChild(correctScore);
         
+        
         document.getElementById("questionText").style.display="none";
         document.getElementById("answers").style.display="none";
         document.getElementById("timer").style.display="none";
+        if (rightAnswers>=localStorage.getItem("highscore")){
+            localStorage.setItem("highscore",rightAnswers)}
         userNameandScore()
     }
     
@@ -128,10 +131,12 @@ function getQuestions(){
 console.log(rightAnswers)
 console.log(wrongAnswers)
 
-function userNameandScore() {
-    var userName=document.createElement("p")
-    userName.innerHTML="Hi"
-    document.body.appendChild(userName)
+
+function userNameandScore(){
+    if (rightAnswers>localStorage.getItem("highscore")){
+        localStorage.setItem("highscore",rightAnswers)
+    }
+    
 }
 //startQuiz();
 

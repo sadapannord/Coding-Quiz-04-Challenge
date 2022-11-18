@@ -17,10 +17,16 @@ body {
     text-align: center;
     font-size: 2em;
 }
+#highscore {
+    display: none;
+}
 /*.questions {
     display: none;
     
 }
 .answers {
+    display: none;
+}*/
+form {
     display: none;
 }
