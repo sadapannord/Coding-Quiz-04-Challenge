@@ -15,11 +15,11 @@ var userAnswer;
 var timerElement=document.querySelector("#timer");
 var possibleQuestions = [
     {
-        question:"question 1",
-        answerOne:"Does this make sense?",
-        answerTwo: "two",
-        answerThree: "three",
-        correct:"yep"
+        question:"How do you combine arrays?",
+        answerOne:".add",
+        answerTwo: ".combine",
+        answerThree: ".plus",
+        correct:".concat"
     },
     {
         question:"question 2",
