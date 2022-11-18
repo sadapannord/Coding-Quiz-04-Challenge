@@ -133,6 +133,8 @@ console.log(wrongAnswers)
 
 
 function userNameandScore(){
+    var userName=document.getElementById("userName")
+    var score=document.getElementById("score")
     if (rightAnswers>localStorage.getItem("highscore")){
         localStorage.setItem("highscore",rightAnswers)
     }
