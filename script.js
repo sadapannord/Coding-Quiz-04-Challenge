@@ -19,28 +19,29 @@ var possibleQuestions = [
         answerOne:".add",
         answerTwo: ".combine",
         answerThree: ".plus",
-        correct:".concat"
+        correct:".concat",
     },
     {
-        question:"question 2",
-        answerOne:"one",
-        answerTwo: "two",
-        answerThree: "three",
-        correct: "yep"
+        question:"In order to get random numbers what should you use?",
+        answerOne:"math.random()",
+        answerTwo: "math.floor()",
+        answerThree: "math.Floor()",
+        correct: "Math.random()",
     },
     {
-        question:"question 3",
-        answerOne:"one",
-        answerTwo: "two",
-        answerThree: "three",
-        correct: "yep"
+        question:"If you wanted to change how an element looks using JS, how would you do so?",
+        answerOne:".appearance()",
+        correct: ".setAttribute()",
+        answerTwo: ".getAttribute()",
+        answerThree: ".styleSheet()",
+        
     },
     {
-        question:"question 4",
-        answerOne:"one",
-        answerTwo: "two",
-        answerThree: "three",
-        correct: "yep"
+        question:"What does DOM stand for?",
+        correct: "Document Object Model",
+        answerOne:"Document Observe Model",
+        answerTwo: "Data Object Module",
+        answerThree: "Data Object Modem",
     }
 ]
 startButton.addEventListener("click",startQuiz)
@@ -85,13 +86,11 @@ function checkAnswer(e){
         var correctScore=document.createElement("p");
         correctScore.innerHTML="You got "+ rightAnswers+ " questions correct";
         document.body.appendChild(correctScore);
-        
-        
         document.getElementById("questionText").style.display="none";
         document.getElementById("answers").style.display="none";
         document.getElementById("timer").style.display="none";
-        if (rightAnswers>=localStorage.getItem("highscore")){
-            localStorage.setItem("highscore",rightAnswers)}
+        /*if (rightAnswers>=localStorage.getItem("highscore")){
+            localStorage.setItem("highscore",rightAnswers)}*/
         userNameandScore()
     }
     
@@ -138,8 +137,10 @@ function userNameandScore(){
     if (rightAnswers>localStorage.getItem("highscore")){
         localStorage.setItem("highscore",rightAnswers)
     }
-    
-}
+    userName=window.prompt("Username")
+    score=window.prompt("Score")
+    console.log(userName)
+} 
 //startQuiz();
 
 /*function checkCorrect(){
